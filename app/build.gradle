@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'com.squareup.sqldelight'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
+    id 'com.squareup.sqldelight'
 }
 
 android {
@@ -86,8 +86,15 @@ dependencies {
     // and kotlin-stdlib-jdk8-1.7.0 (org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.0)"
     implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
 
-    // SQL Delight
-    implementation "com.squareup.sqldelight:android-driver:1.5.2"
-    implementation "com.squareup.sqldelight:coroutines-extensions-jvm:1.5.2"
 
+    // SQL Delight
+    implementation 'com.squareup.sqldelight:android-driver:1.5.5'
+    implementation 'com.squareup.sqldelight:coroutines-extensions-jvm:1.5.5'
+
+}
+
+sqldelight {
+    PersonDatabse {
+        packageName = "com.example.sqldelightproject"
+    }
 }
